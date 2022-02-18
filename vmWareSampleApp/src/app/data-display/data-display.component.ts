@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { SharedDataService } from '../shared/services/shared-data.service';
 
 @Component({
-  selector: 'wss-data-output',
+  selector: 'app-data-display',
   templateUrl: './data-display.component.html',
   styleUrls: ['./data-display.component.scss']
 })

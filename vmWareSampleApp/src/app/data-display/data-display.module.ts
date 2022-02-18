@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { DataDisplayRoutingModule } from './data-display-routing.module';
 import { DataDisplayComponent } from './data-display.component';
+import { WssDataOutputComponent } from './wss-data-output/wss-data-output.component';
 
 
 @NgModule({
   declarations: [
-    DataDisplayComponent
+    DataDisplayComponent,
+    WssDataOutputComponent
   ],
   imports: [
     CommonModule,

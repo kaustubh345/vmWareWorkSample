@@ -23,7 +23,6 @@ export class DataCollectComponent implements OnInit {
   }
 
   submitForm(form: NgForm): void {
-    console.log(form);
     const formValue: IFormData = {
       field1: form.controls['field1'],
       field2: form.controls['field2']
