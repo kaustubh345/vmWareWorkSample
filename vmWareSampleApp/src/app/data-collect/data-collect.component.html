@@ -1,31 +1,33 @@
-<form #form="ngForm">
-    <div class="row">
-        <label for="field1">Field 1</label>
-        <input 
-            #field1="ngModel"
-            ngModel 
-            name="field1" 
-            required
-            type="text" />
-        <small class="error" *ngIf="!field1.valid && field1.touched">field1 is required</small>
-    </div>
-    <div class="row">
-        <label>Field 2</label>
-        <input 
-            #field2="ngModel"
-            ngModel 
-            name="field2" 
-            required
-            pattern="^((25[0-5]|(2[0-4]|1[0-9]|[1-9]|)[0-9])(\.(?!$)|$)){4}$"
-            type="text" />
-        <ng-container *ngIf="!field2.valid && field2.touched">
-            <small class="error" *ngIf="field2.errors['required']">field2 is required</small>
-            <small class="error" *ngIf="field2.errors['pattern']">field2 is not valid IPV4 address</small>
-        </ng-container>
-
-    </div>
-    <div class="row">
-        <!-- [disabled]="form.invalid"  -->
-        <button [disabled]="form.invalid" type="button" (click)="submitForm(form)">Submit</button>
+<form #form="ngForm" class="container">
+    <div class='card'>
+        <div class="row">
+            <label for="field1">Field 1</label>
+            <input 
+                #field1="ngModel"
+                [(ngModel)]="field1Value" 
+                name="field1" 
+                required
+                type="text" />
+            <small class="error required-error" *ngIf="!field1.valid && field1.touched">field1 is required</small>
+        </div>
+        <div class="row">
+            <label>Field 2</label>
+            <input 
+                #field2="ngModel"
+                [(ngModel)]="field2Value"  
+                name="field2" 
+                required
+                pattern="^((25[0-5]|(2[0-4]|1[0-9]|[1-9]|)[0-9])(\.(?!$)|$)){4}$"
+                type="text" />
+            <ng-container *ngIf="!field2.valid && field2.touched">
+                <small class="error" *ngIf="field2.errors['required']">field2 is required</small>
+                <small class="error" *ngIf="field2.errors['pattern']">field2 is not valid IPV4 address</small>
+            </ng-container>
+    
+        </div>
+        <div class="row">
+            <!-- [disabled]="form.invalid"  -->
+            <button [disabled]="form.invalid" type="button" (click)="submitForm(form)">Next</button>
+        </div>
     </div>
 </form>

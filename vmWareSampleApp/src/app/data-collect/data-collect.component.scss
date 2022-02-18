@@ -1,14 +1,14 @@
 .error{
     color: red;
+    margin-left: 5px;
 }
-form {
-    display: flex;
-    flex-direction: column;
-    gap:10px;
-}
+
 input {
     margin-left: 5px;
     &.ng-invalid.ng-touched {
         border-color:red;
     }
+}
+button {
+    font-size: 15px;
 }
